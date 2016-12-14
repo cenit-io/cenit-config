@@ -10,6 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ['macarci@gmail.com']
 
   spec.summary       = %q{A dynamic configurable module.}
+  spec.description   = %q{Provides a dynamic configurable module that can be extended by any other.}
   spec.homepage      = 'https://cenit.io'
   spec.license       = 'MIT'
 

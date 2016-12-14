@@ -1,6 +1,6 @@
 # Cenit Config
 
-Provides a dynamic configurable module that can be extended by anyone.
+Provides a dynamic configurable module that can be extended by any other.
 
 ## Installation
 
