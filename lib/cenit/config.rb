@@ -40,4 +40,6 @@ module Cenit
   end
 
   extend Config
+
+  host 'https://cenit.io'
 end
