@@ -50,12 +50,8 @@ You can define default configuration options
 module MyApp
     extend Cenit::Config
     
-    def self.default_options
-        {
-            number: 1,
-            color: 'blue'
-        }
-    end
+    default_options number: 1,
+                    color: 'blue'
 end
 ```
 

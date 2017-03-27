@@ -5,15 +5,19 @@ module Cenit
   module Config
 
     def options
-      @options ||= default_options
+      @options ||= {}
     end
 
-    def default_options
-      {}
+    def default_options(*args)
+      @default_options ||= {}
+      if (opts = args[0]).is_a?(Hash)
+        @default_options.merge!(opts)
+      end
+      @default_options
     end
 
     def [](option)
-      (value = options[option]).respond_to?(:call) ? value.call : value
+      (value = options[option] || default_options[option]).respond_to?(:call) ? value.call : value
     end
 
     def []=(option, value)
@@ -25,7 +29,7 @@ module Cenit
     end
 
     def respond_to?(*args)
-      super || options.has_key?(args[0])
+      super || options.key?(args[0]) || default_options.key?(args[0])
     end
 
     def method_missing(symbol, *args)
